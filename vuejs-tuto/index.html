@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header>{{emoj}}</header>
+      <h1>{{status_code}}</h1>
+      <p>{{status_message}}</p>
+      <a href="https://www.scrimba.com" target="_blank">{{button_text}}</a>
+    </div>
+    <script>
+      const { createApp, ref } = Vue;
+      createApp({
+        setup() {
+          const emoji = ref("😎");
+          const status_code = ref("404");
+          const status_message = ref("Server is sleeping...");
+          const button_text = ref("Bye Bye");
+          return { emoji, status_code, status_message, button_text };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
